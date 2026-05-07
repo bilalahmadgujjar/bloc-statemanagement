@@ -1,4 +1,5 @@
-import 'package:bloc/screens/product.dart';
+
+import 'package:bloc_learning_app/screens/product.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
