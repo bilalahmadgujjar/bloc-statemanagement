@@ -2,6 +2,8 @@
 // To parse this JSON data, do
 //
 //     final productsModel = productsModelFromJson(jsonString);
+//     https://fakestoreapi.com/products
+
 
 import 'dart:convert';
 

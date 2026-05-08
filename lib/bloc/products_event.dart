@@ -1,0 +1,15 @@
+part of 'products_bloc.dart';
+
+@immutable
+sealed class ProductsEvent extends Equatable{
+  const ProductsEvent();
+
+  @override
+  List<Object> get props => [];
+}
+
+
+class ProductsEventLoaded extends Equatable{
+  @override
+  List<Object> get props => [];
+}
