@@ -3,8 +3,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/products_bloc.dart';
 
-class ProductList extends StatelessWidget {
+class ProductList extends StatefulWidget {
   const ProductList({super.key});
+
+  @override
+  State<ProductList> createState() => _ProductListState();
+}
+
+class _ProductListState extends State<ProductList> {
+
+  @override
+  void initState() {
+    context.read<ProductsBloc>().add(ProductsEventLoaded());
+
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +33,9 @@ class ProductList extends StatelessWidget {
           if (state is ProductsLoadingState) {
             return Center(child: CircularProgressIndicator.adaptive());
           } else if (state is ProductsLoadedState) {
-            int item = state.productsModel.length;
+
             return ListView.builder(
+              itemCount:  state.productsModel.length,
               itemBuilder: (context, index) {
                 return ListTile(
                   leading:Image.network(state.productsModel[index].image),
